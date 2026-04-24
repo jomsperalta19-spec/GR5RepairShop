@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RepairShop</title>
+
+  <!-- FAVICON (Chrome tab icon) -->
+  <link rel="icon" type="image/png" href="logo.png">
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial;
+      margin: 0;
+      background: url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      z-index: -1;
+    }
+
+    header {
+      background: rgba(0,0,0,0.85);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav a {
+      color: #00ffcc;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .box {
+      background: white;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: black;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    a {
+      color: #00ffcc;
+    }
+
+    .note {
+      font-size: 12px;
+      color: gray;
+    }
+  </style>
+</head>
+
+<body>
+
+<header id="home">
+  <h1>RepairShop</h1>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#booking">Booking</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <p>📞 09154135741</p>
+
+  <!-- CALL BUTTON -->
+  <a href="tel:09154135741">
+    <button>📞 Call Now</button>
+  </a>
+
+  <!-- EMAIL -->
+  <p>
+    📧 <a href="mailto:jomargarciaperalta8@gmail.com">
+      jomargarciaperalta8@gmail.com
+    </a>
+  </p>
+
+  <!-- FACEBOOK -->
+  <p>
+    📘 <a href="https://www.facebook.com/search/top?q=Jomar%20Peralta" target="_blank">
+      Jomar Peralta
+    </a>
+  </p>
+</header>
+
+<div class="container">
+
+  <!-- SERVICES -->
+  <div class="box" id="services">
+    <h2>Services</h2>
+    <ul>
+      <li>Laptop Reformat</li>
+      <li>Phone LCD Replacement</li>
+      <li>iPhone Reseter</li>
+      <li>Battery Replacement</li>
+      <li>Charging Port Repair</li>
+    </ul>
+  </div>
+
+  <!-- SERVICE OPTIONS -->
+  <div class="box">
+    <h2>Service Options</h2>
+    <ul>
+      <li>🏠 Home Service (nearby only)</li>
+      <li>🛵 Pickup & Delivery</li>
+      <li>📦 Courier Service (LBC / J&T)</li>
+    </ul>
+  </div>
+
+  <!-- BOOKING -->
+  <div class="box" id="booking">
+    <h2>Book Repair</h2>
+
+    <form onsubmit="return showMessage()">
+
+      Name:
+      <input type="text">
+
+      Address:
+      <input type="text">
+
+      City:
+      <input type="text">
+
+      Phone Model:
+      <input type="text">
+
+      Problem:
+      <input type="text">
+
+      Need Parts?
+      <select>
+        <option>Yes - Order first</option>
+        <option>No</option>
+      </select>
+
+      Service Option:
+      <select>
+        <option>Home Service</option>
+        <option>Pickup</option>
+        <option>Courier</option>
+      </select>
+
+      <button type="submit">Submit Booking</button>
+
+      <p class="note">
+        *We will contact you soon after booking.
+      </p>
+
+      <p id="thankyou" style="color:green; font-weight:bold;"></p>
+
+    </form>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="box" id="contact">
+    <h2>Contact</h2>
+    <p>📞 09154135741</p>
+    <p>📧 jomargarciaperalta8@gmail.com</p>
+    <p>📘 Jomar Peralta</p>
+  </div>
+
+</div>
+
+<!-- JAVASCRIPT -->
+<script>
+function showMessage() {
+  document.getElementById("thankyou").innerText =
+    "Thank you! We received your booking. We will contact you soon.";
+
+  document.querySelector("form").reset();
+
+  return false;
+}
+</script>
+
+</body>
+</html>
